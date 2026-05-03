@@ -649,9 +649,10 @@ body {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 80px;
   align-items: start;
+  max-width: 700px;
 }
 
 .contact-title {
@@ -1166,38 +1167,7 @@ footer {
       </div>
     </div>
 
-    <div>
-      <form onsubmit="handleSubmit(event)">
-        <div class="form-group">
-          <label class="form-label en">Your name</label>
-          <label class="form-label zh">您的姓名</label>
-          <label class="form-label ja">お名前</label>
-          <input type="text" class="form-input" placeholder="Name" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label en">Email address</label>
-          <label class="form-label zh">电子邮件</label>
-          <label class="form-label ja">メールアドレス</label>
-          <input type="email" class="form-input" placeholder="email@example.com" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label en">Your message</label>
-          <label class="form-label zh">留言内容</label>
-          <label class="form-label ja">メッセージ</label>
-          <textarea class="form-textarea" placeholder="Tell us about your concept or how we can help..." required></textarea>
-        </div>
-        <button type="submit" class="form-submit">
-          <span class="en">Send message →</span>
-          <span class="zh">发送消息 →</span>
-          <span class="ja">送信する →</span>
-        </button>
-        <div id="form-success" style="display:none;margin-top:16px;font-size:13px;color:var(--coral);font-family:'DM Mono',monospace;letter-spacing:0.1em;">
-          <span class="en">MESSAGE SENT — WE'LL BE IN TOUCH.</span>
-          <span class="zh">消息已发送——我们会尽快回复。</span>
-          <span class="ja">送信完了——折り返しご連絡いたします。</span>
-        </div>
-      </form>
-    </div>
+
   </div>
 </div>
 </div>
@@ -1253,12 +1223,7 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
 
-// Form submit simulation
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('form-success').style.display = 'block';
-  e.target.reset();
-}
+
 </script>
 </body>
 </html>
